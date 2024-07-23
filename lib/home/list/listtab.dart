@@ -18,56 +18,6 @@ class Listtab extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          // Padding(
-          //   padding: const EdgeInsets.only(top: 5.0),
-          //   child: EasyDateTimeLine(
-          //     locale: provider.appLanguage,
-          //     initialDate: DateTime.now(),
-          //     onDateChange: (selectedDate) {
-          //       //`selectedDate` the new date selected.
-          //     },
-          //     headerProps: const EasyHeaderProps(
-          //       showHeader: false,
-          //     ),
-          //     dayProps:  EasyDayProps(
-          //       dayStructure: DayStructure.dayStrDayNumMonth,
-          //       borderColor: Colors.white,
-          //       inactiveDayStyle: DayStyle(
-          //         dayNumStyle: TextStyle(
-          //           color: provider.IsLightMode() ? AppColors.black : AppColors.white
-          //         )
-          //       ),
-          //       todayStyle: DayStyle(
-          //         dayNumStyle: TextStyle(
-          //           color: provider.IsLightMode() ? AppColors.black : AppColors.white
-          //         )
-          //       ),
-          //       activeDayStyle: DayStyle(
-          //         dayNumStyle: TextStyle(
-          //             color: provider.IsLightMode() ?
-          //             AppColors.primaryColor : AppColors.white,
-          //
-          //         ),
-          //         monthStrStyle: TextStyle(
-          //             color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
-          //         ),
-          //         dayStrStyle: TextStyle(
-          //             color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
-          //         ),
-          //         decoration: BoxDecoration(
-          //           borderRadius: BorderRadius.all(Radius.circular(8)),
-          //           gradient: LinearGradient(
-          //             begin: Alignment.topCenter,
-          //             end: Alignment.bottomCenter,
-          //             colors: [
-          //               provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
-          //               provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor],
-          //           ),
-          //         ),
-          //       ),
-          //     ),
-          //   ),
-          // ),
           Stack(
             children: [
             Container(
@@ -76,7 +26,7 @@ class Listtab extends StatelessWidget {
               color: AppColors.primaryColor,
             ),
               Padding(
-                padding: const EdgeInsets.only(top: 5.0),
+                padding: const EdgeInsets.only(top: 10.0),
                 child: EasyDateTimeLine(
                   locale: provider.appLanguage,
                   initialDate: DateTime.now(),

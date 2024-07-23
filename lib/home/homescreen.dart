@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_demo/home/list/add_task_bottom_Sheet.dart';
@@ -6,7 +5,6 @@ import 'package:todo_demo/home/list/listtab.dart';
 import 'package:todo_demo/home/settings/settings_tab.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
 import '../provider/config_provider.dart';
 
 
@@ -45,7 +43,7 @@ class _HomescreenState extends State<Homescreen> {
             onTap: (index){
               SelectedIndex = index ;
               setState(() {
-          
+
               });
             },
             currentIndex: SelectedIndex,

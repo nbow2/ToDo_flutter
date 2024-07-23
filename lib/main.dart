@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:todo_demo/home/homescreen.dart';
 import 'package:todo_demo/my_theme/my_theme_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -7,14 +8,20 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_demo/provider/config_provider.dart';
 
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+  final String? saveLango = sharedPreferences.getString('appLanguage');
+  final bool? theme = sharedPreferences.getBool('theme');
   runApp(
       MultiProvider(
       providers:[
-        ChangeNotifierProvider(create: (context) => ConfigProvider()),
+        ChangeNotifierProvider(create: (context) => ConfigProvider(
+          locale: saveLango ?? 'ar', mode: theme ?? false)
+        ),
       ]  ,
       child:  MyApp()
-  )
+      )
   );
 }
 

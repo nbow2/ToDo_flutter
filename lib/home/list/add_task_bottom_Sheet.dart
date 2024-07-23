@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   @override
@@ -20,7 +21,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
      margin: EdgeInsets.all(15),
       child: Column(
         children: [
-          Text('Add New Task',
+          Text(AppLocalizations.of(context)!.add_task,
             textAlign: TextAlign.center ,
           style: Theme.of(context).textTheme.titleMedium,),
           Form(
@@ -32,13 +33,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               TextFormField(
                 validator: (text){
                   if (text == null || text.isEmpty) {
-                     return 'Please enter task title';
+                     return AppLocalizations.of(context)!.please_enter_task_title;
                   } else {
                     return null ;
                   }
                 },
                 decoration: InputDecoration(
-                    hintText: 'Enter Task Title'
+                    hintText: AppLocalizations.of(context)!.enter_task_title
                 ),
 
               ),
@@ -46,13 +47,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               TextFormField(
                 validator:(text){
                   if (text == null || text.isEmpty) {
-                    return 'Please enter task Description';
+                    return AppLocalizations.of(context)!.please_enter_task_description;
                   } else {
                     return null ;
                   }
                 } ,
                 decoration: InputDecoration(
-                  hintText: 'Enter Task Description',
+                  hintText: AppLocalizations.of(context)!.enter_Task_desc,
                 ),
                 maxLines: 3,
 
@@ -60,7 +61,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Select Time' ,
+                  AppLocalizations.of(context)!.select_time ,
                   textAlign: TextAlign.start ,
                   style: Theme.of(context).textTheme.bodyLarge,),
               ),
@@ -76,7 +77,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 ),
               ),
               SizedBox(
-                height: height *0.082,
+                height: height *0.072,
                 width: width * 0.08,
                 child: Scaffold(
                   backgroundColor: Colors.transparent,

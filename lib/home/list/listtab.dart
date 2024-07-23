@@ -15,12 +15,14 @@ class Listtab extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(top: 5.0),
             child: EasyDateTimeLine(
+              locale: 'ar',
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {
                 //`selectedDate` the new date selected.
               },
               headerProps: const EasyHeaderProps(
                 showHeader: false,
+
               ),
               dayProps: const EasyDayProps(
                 dayStructure: DayStructure.dayStrDayNumMonth,

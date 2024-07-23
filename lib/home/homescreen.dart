@@ -4,6 +4,7 @@ import 'package:todo_demo/home/list/add_task_bottom_Sheet.dart';
 import 'package:todo_demo/home/list/listtab.dart';
 import 'package:todo_demo/home/settings/settings_tab.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 
 class Homescreen extends StatefulWidget {
@@ -23,7 +24,7 @@ class _HomescreenState extends State<Homescreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: height *0.184,
-        title: Text('To Do List',
+        title: Text(AppLocalizations.of(context)!.app_title,
         style: Theme.of(context).textTheme.titleLarge,
         ),
         elevation: 0,

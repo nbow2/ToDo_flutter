@@ -1,0 +1,17 @@
+{
+  "app_title": "قائمة المهام",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "theme": "السمة",
+  "dark_theme": "داكنة",
+  "light_theme": "فاتحة",
+  "add_task": "إضافة مهمة جديدة",
+  "enter_task_title": "أدخل عنوان المهمة",
+  "enter_Task_desc": "أدخل وصف المهمة",
+  "select_time": "اختر الوقت",
+  "please_enter_task_description": "الرجاء إدخال وصف المهمة",
+  "please_enter_task_title": "الرجاء إدخال عنوان المهمة",
+  "title": "عنوان",
+  "desc": "وصف"
+}

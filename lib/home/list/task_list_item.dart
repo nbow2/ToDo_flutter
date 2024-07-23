@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskListItem extends StatelessWidget {
   const TaskListItem({super.key});
@@ -28,13 +29,13 @@ class TaskListItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                  'Title',
+                  AppLocalizations.of(context)!.title,
                   style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                     color: AppColors.primaryColor
                   )
                 ),
               Text(
-                  'Desc',
+                  AppLocalizations.of(context)!.desc,
                   style:Theme.of(context).textTheme.titleMedium ,
               )
             ],

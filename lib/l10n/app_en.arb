@@ -1,0 +1,17 @@
+{
+  "app_title": "To Do List",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english" :"English",
+  "theme":"Theme",
+  "dark_theme":"Dark",
+  "light_theme":"Light",
+  "add_task": "Add New Task",
+  "enter_task_title": "Enter Task Title",
+  "enter_Task_desc": "Enter Task Description",
+  "select_time" : "Select Time",
+  "please_enter_task_description": "Please enter task Description",
+  "please_enter_task_title": "Please enter task title",
+  "title": "Title",
+  "desc": "Desc"
+}

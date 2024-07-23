@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:todo_demo/provider/config_provider.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   @override
@@ -15,6 +17,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height ;
     var width = MediaQuery.of(context).size.width ;
+    var provider = Provider.of<ConfigProvider>(context);
     return Container(
       height: double.infinity,
      width: double.infinity,
@@ -39,7 +42,12 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   }
                 },
                 decoration: InputDecoration(
-                    hintText: AppLocalizations.of(context)!.enter_task_title
+                    hintText: AppLocalizations.of(context)!.enter_task_title,
+                    hintStyle: TextStyle(
+                        color: provider.IsLightMode() ?
+                        AppColors.black :
+                        AppColors.white
+                    )
                 ),
 
               ),
@@ -54,6 +62,11 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 } ,
                 decoration: InputDecoration(
                   hintText: AppLocalizations.of(context)!.enter_Task_desc,
+                  hintStyle: TextStyle(
+                    color: provider.IsLightMode() ?
+                    AppColors.black :
+                    AppColors.white
+                  )
                 ),
                 maxLines: 3,
 

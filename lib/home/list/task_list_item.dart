@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../provider/config_provider.dart';
 
 class TaskListItem extends StatelessWidget {
   const TaskListItem({super.key});
@@ -9,11 +11,12 @@ class TaskListItem extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height ;
     var width = MediaQuery.of(context).size.width ;
+    var provider = Provider.of<ConfigProvider>(context);
     return Container(
       margin: EdgeInsets.all(13),
       padding: EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: AppColors.white,
+        color: provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
         borderRadius: BorderRadius.circular(20)
       ),
       child: Row(

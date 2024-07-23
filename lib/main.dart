@@ -29,6 +29,8 @@ class MyApp extends StatelessWidget {
       title: 'ToDo App',
       debugShowCheckedModeBanner: false,
       theme: MyThemeData.light,
+      themeMode: provider.Theme,
+      darkTheme: MyThemeData.dark,
       locale: Locale(provider.appLanguage),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,

@@ -27,19 +27,39 @@ class Listtab extends StatelessWidget {
                 showHeader: false,
 
               ),
-              dayProps: const EasyDayProps(
+              dayProps:  EasyDayProps(
                 dayStructure: DayStructure.dayStrDayNumMonth,
+                borderColor: Colors.white,
+                inactiveDayStyle: DayStyle(
+                  dayNumStyle: TextStyle(
+                    color: provider.IsLightMode() ? AppColors.black : AppColors.white
+                  )
+                ),
+                todayStyle: DayStyle(
+                  dayNumStyle: TextStyle(
+                    color: provider.IsLightMode() ? AppColors.black : AppColors.white
+                  )
+                ),
                 activeDayStyle: DayStyle(
-                  dayNumStyle: TextStyle(color: Colors.black),
-                  monthStrStyle: TextStyle(color: Colors.black),
-                  dayStrStyle: TextStyle(color: Colors.black),
-                  decoration: BoxDecoration(
+                  dayNumStyle: TextStyle(
+                      color: provider.IsLightMode() ?
+                      AppColors.primaryColor : AppColors.white,
 
+                  ),
+                  monthStrStyle: TextStyle(
+                      color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+                  ),
+                  dayStrStyle: TextStyle(
+                      color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+                  ),
+                  decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(8)),
                     gradient: LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
-                      colors: [Colors.white, Colors.white],
+                      colors: [
+                        provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
+                        provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor],
                     ),
                   ),
                 ),
@@ -49,7 +69,7 @@ class Listtab extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index){
-                return TaskListItem();
+                return const TaskListItem();
               } ,
               itemCount: 20,
             ),

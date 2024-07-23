@@ -68,6 +68,70 @@ class MyThemeData {
     )
 
   ) ;
-  static final ThemeData dark = ThemeData() ;
+  static final ThemeData dark = ThemeData(
+      primaryColor: AppColors.primaryColor,
+      scaffoldBackgroundColor: AppColors.backgroundDarkColor,
+      appBarTheme: AppBarTheme(
+          backgroundColor: AppColors.primaryColor
+      ),
+      textTheme: TextTheme(
+        titleLarge: GoogleFonts.poppins(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: AppColors.blackDarkColor
+        ),
+        titleMedium: GoogleFonts.poppins(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: AppColors.white
+        ),
+        bodyLarge:GoogleFonts.inter(
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: AppColors.white
+        ),
+        bodyMedium:GoogleFonts.inter(
+            fontSize: 18,
+            fontWeight: FontWeight.w400,
+            color: AppColors.white
+        ),
+        labelLarge: GoogleFonts.poppins(
+            fontSize: 22,
+            fontWeight: FontWeight.bold,
+            color: AppColors.white
+        ),
+        labelMedium: GoogleFonts.poppins(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: AppColors.primaryColor
+        ),
+      ),
+      bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          selectedItemColor: AppColors.primaryColor,
+          unselectedItemColor: AppColors.white,
+          showSelectedLabels: false,
+          backgroundColor: Colors.transparent,
+          elevation: 0
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+          backgroundColor: AppColors.primaryColor,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(35),
+              side: BorderSide(
+                  color: AppColors.blackDarkColor,
+                  width: 4
+              )
+          ),
+          foregroundColor: AppColors.white
+      ),
+      bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: AppColors.blackDarkColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(topLeft:Radius.circular(15) , topRight: Radius.circular(15)),
+            side: BorderSide(),
+          )
+      )
+
+  ) ;
 
 }

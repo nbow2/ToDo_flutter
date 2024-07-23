@@ -4,7 +4,7 @@ class ConfigProvider extends ChangeNotifier{
   String appLanguage = 'ar';
   String check = '';
   // data theme
-  ThemeMode Theme = ThemeMode.light ;
+  ThemeMode Theme = ThemeMode.dark ;
 
   void ChangeLanguage(String newLang){
 

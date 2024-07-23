@@ -11,61 +11,121 @@ class Listtab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var height = MediaQuery.of(context).size.height ;
+    var width = MediaQuery.of(context).size.width ;
+    var all = width + height ;
     var provider = Provider.of<ConfigProvider>(context);
     return Container(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 5.0),
-            child: EasyDateTimeLine(
-              locale: provider.appLanguage,
-              initialDate: DateTime.now(),
-              onDateChange: (selectedDate) {
-                //`selectedDate` the new date selected.
-              },
-              headerProps: const EasyHeaderProps(
-                showHeader: false,
+          // Padding(
+          //   padding: const EdgeInsets.only(top: 5.0),
+          //   child: EasyDateTimeLine(
+          //     locale: provider.appLanguage,
+          //     initialDate: DateTime.now(),
+          //     onDateChange: (selectedDate) {
+          //       //`selectedDate` the new date selected.
+          //     },
+          //     headerProps: const EasyHeaderProps(
+          //       showHeader: false,
+          //     ),
+          //     dayProps:  EasyDayProps(
+          //       dayStructure: DayStructure.dayStrDayNumMonth,
+          //       borderColor: Colors.white,
+          //       inactiveDayStyle: DayStyle(
+          //         dayNumStyle: TextStyle(
+          //           color: provider.IsLightMode() ? AppColors.black : AppColors.white
+          //         )
+          //       ),
+          //       todayStyle: DayStyle(
+          //         dayNumStyle: TextStyle(
+          //           color: provider.IsLightMode() ? AppColors.black : AppColors.white
+          //         )
+          //       ),
+          //       activeDayStyle: DayStyle(
+          //         dayNumStyle: TextStyle(
+          //             color: provider.IsLightMode() ?
+          //             AppColors.primaryColor : AppColors.white,
+          //
+          //         ),
+          //         monthStrStyle: TextStyle(
+          //             color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+          //         ),
+          //         dayStrStyle: TextStyle(
+          //             color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+          //         ),
+          //         decoration: BoxDecoration(
+          //           borderRadius: BorderRadius.all(Radius.circular(8)),
+          //           gradient: LinearGradient(
+          //             begin: Alignment.topCenter,
+          //             end: Alignment.bottomCenter,
+          //             colors: [
+          //               provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
+          //               provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor],
+          //           ),
+          //         ),
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          Stack(
+            children: [
+            Container(
+              width: double.infinity,
+              height: height * 0.085,
+              color: AppColors.primaryColor,
+            ),
+              Padding(
+                padding: const EdgeInsets.only(top: 5.0),
+                child: EasyDateTimeLine(
+                  locale: provider.appLanguage,
+                  initialDate: DateTime.now(),
+                  onDateChange: (selectedDate) {
+                    //`selectedDate` the new date selected.
+                  },
+                  headerProps: const EasyHeaderProps(
+                    showHeader: false,
+                  ),
+                  dayProps:  EasyDayProps(
+                    dayStructure: DayStructure.dayStrDayNumMonth,
+                    borderColor: Colors.white,
+                    inactiveDayStyle: DayStyle(
+                        dayNumStyle: TextStyle(
+                            color: provider.IsLightMode() ? AppColors.black : AppColors.white
+                        )
+                    ),
+                    todayStyle: DayStyle(
+                        dayNumStyle: TextStyle(
+                            color: provider.IsLightMode() ? AppColors.black : AppColors.white
+                        )
+                    ),
+                    activeDayStyle: DayStyle(
+                      dayNumStyle: TextStyle(
+                        color: provider.IsLightMode() ?
+                        AppColors.primaryColor : AppColors.white,
 
-              ),
-              dayProps:  EasyDayProps(
-                dayStructure: DayStructure.dayStrDayNumMonth,
-                borderColor: Colors.white,
-                inactiveDayStyle: DayStyle(
-                  dayNumStyle: TextStyle(
-                    color: provider.IsLightMode() ? AppColors.black : AppColors.white
-                  )
-                ),
-                todayStyle: DayStyle(
-                  dayNumStyle: TextStyle(
-                    color: provider.IsLightMode() ? AppColors.black : AppColors.white
-                  )
-                ),
-                activeDayStyle: DayStyle(
-                  dayNumStyle: TextStyle(
-                      color: provider.IsLightMode() ?
-                      AppColors.primaryColor : AppColors.white,
-
-                  ),
-                  monthStrStyle: TextStyle(
-                      color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
-                  ),
-                  dayStrStyle: TextStyle(
-                      color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
-                  ),
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(8)),
-                    gradient: LinearGradient(
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      colors: [
-                        provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
-                        provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor],
+                      ),
+                      monthStrStyle: TextStyle(
+                          color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+                      ),
+                      dayStrStyle: TextStyle(
+                          color: provider.IsLightMode() ? AppColors.primaryColor : AppColors.white
+                      ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(8)),
+                        gradient: LinearGradient(
+                          begin: Alignment.topCenter,
+                          end: Alignment.bottomCenter,
+                          colors: [
+                            provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor,
+                            provider.IsLightMode() ? AppColors.white : AppColors.blackDarkColor],
+                        ),
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
-          ),
+          ],),
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index){

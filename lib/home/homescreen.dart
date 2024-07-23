@@ -28,7 +28,7 @@ class _HomescreenState extends State<Homescreen> {
     var provider = Provider.of<ConfigProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        toolbarHeight: height *0.184,
+        toolbarHeight: height *0.08,
         title: Text(AppLocalizations.of(context)!.app_title,
         style: Theme.of(context).textTheme.titleLarge,
         ),

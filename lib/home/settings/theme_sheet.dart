@@ -29,7 +29,7 @@ class _ThemeSheetState extends State<ThemeSheet> {
               },
               child: provider.Theme == ThemeMode.light ?
               getSelectedItem(AppLocalizations.of(context)!.light_theme):
-              getUnselectedItem(AppLocalizations.of(context)!.dark_theme)
+              getUnselectedItem(AppLocalizations.of(context)!.light_theme)
           ),
           SizedBox(height: all * 0.012,),
           InkWell(

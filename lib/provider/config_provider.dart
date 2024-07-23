@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 class ConfigProvider extends ChangeNotifier{
   /// data languages
-  String appLanguage = 'en';
+  String appLanguage = 'ar';
   String check = '';
   // data theme
   ThemeMode Theme = ThemeMode.light ;

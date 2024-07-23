@@ -1,6 +1,8 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_demo/home/list/task_list_item.dart';
+import 'package:todo_demo/provider/config_provider.dart';
 
 import '../../my_theme/app_colors.dart';
 
@@ -9,13 +11,14 @@ class Listtab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<ConfigProvider>(context);
     return Container(
       child: Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 5.0),
             child: EasyDateTimeLine(
-              locale: 'ar',
+              locale: provider.appLanguage,
               initialDate: DateTime.now(),
               onDateChange: (selectedDate) {
                 //`selectedDate` the new date selected.

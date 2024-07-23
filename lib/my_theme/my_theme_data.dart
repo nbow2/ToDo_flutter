@@ -30,7 +30,17 @@ class MyThemeData {
             fontSize: 18,
             fontWeight: FontWeight.w400,
             color: AppColors.black
-        )
+        ),
+      labelLarge: GoogleFonts.poppins(
+          fontSize: 22,
+          fontWeight: FontWeight.bold,
+          color: AppColors.black
+      ),
+      labelMedium: GoogleFonts.poppins(
+          fontSize: 18,
+          fontWeight: FontWeight.bold,
+          color: AppColors.primaryColor
+      ),
     ),
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: AppColors.primaryColor,

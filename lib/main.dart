@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -6,10 +7,19 @@ import 'package:todo_demo/my_theme/my_theme_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_demo/provider/config_provider.dart';
-
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  // options: DefaultFirebaseOptions.android or currentPlatform or ios or ext..
+  Platform.isAndroid ? await Firebase.initializeApp(
+      options: const FirebaseOptions(
+          apiKey: 'AIzaSyDncz58rmN0udv-3874Wfcn6Xa3xlW0Ldc',
+          appId: 'com.example.todo_demo',
+          messagingSenderId: '876795203733',
+          projectId: 'todo-demo-17b58') ):
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   final String? saveLango = sharedPreferences.getString('appLanguage');
   final bool? theme = sharedPreferences.getBool('theme');

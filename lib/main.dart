@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -10,6 +11,8 @@ import 'package:todo_demo/provider/config_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
+
+
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   // options: DefaultFirebaseOptions.android or currentPlatform or ios or ext..
@@ -19,7 +22,8 @@ void main() async{
           appId: 'com.example.todo_demo',
           messagingSenderId: '876795203733',
           projectId: 'todo-demo-17b58') ):
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.android);
+  await Firebase.initializeApp();
+  await FirebaseFirestore.instance.disableNetwork();
   SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
   final String? saveLango = sharedPreferences.getString('appLanguage');
   final bool? theme = sharedPreferences.getBool('theme');

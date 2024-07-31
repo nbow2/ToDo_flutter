@@ -9,6 +9,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_demo/provider/config_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:todo_demo/provider/list_provider.dart';
 import 'firebase_options.dart';
 
 
@@ -33,6 +34,7 @@ void main() async{
         ChangeNotifierProvider(create: (context) => ConfigProvider(
           locale: saveLango ?? 'ar', mode: theme ?? false)
         ),
+        ChangeNotifierProvider(create: (context) =>ListProvider() )
       ]  ,
       child:  MyApp()
       )

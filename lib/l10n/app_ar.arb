@@ -13,5 +13,7 @@
   "please_enter_task_description": "الرجاء إدخال وصف المهمة",
   "please_enter_task_title": "الرجاء إدخال عنوان المهمة",
   "title": "عنوان",
-  "desc": "وصف"
+  "desc": "وصف",
+  "delete": "مسح",
+  "edit": "تعديل"
 }

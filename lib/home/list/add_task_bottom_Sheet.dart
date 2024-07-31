@@ -4,8 +4,10 @@ import 'package:todo_demo/firebase_func/firebase_utils.dart';
 import 'package:todo_demo/my_theme/app_colors.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_demo/provider/config_provider.dart';
+import 'package:todo_demo/provider/list_provider.dart';
 
 import '../../firebase_func/task.dart';
+import '../../provider/list_provider.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   @override
@@ -17,12 +19,14 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   var selectedDate = DateTime.now() ;
   String title = '';
   String desc = '';
+  late ListProvider listProvider ;
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height ;
     var width = MediaQuery.of(context).size.width ;
     var provider = Provider.of<ConfigProvider>(context);
+     listProvider = Provider.of<ListProvider>(context);
     return Container(
       height: double.infinity,
      width: double.infinity,
@@ -139,6 +143,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           Duration(seconds: 1),
           onTimeout: (){
             print('task added successfully');
+            listProvider.getAllTasksFromFireStore();
             Navigator.pop(context);
           }
       );

@@ -18,5 +18,8 @@ class FirebaseUtils{
 
   }
   // delete task
+  static Future<void> deleteTask(Task task){
+    return getTasksCollection().doc(task.id).delete() ;
+  }
 
 }

@@ -13,5 +13,7 @@
   "please_enter_task_description": "Please enter task Description",
   "please_enter_task_title": "Please enter task title",
   "title": "Title",
-  "desc": "Desc"
+  "desc": "Desc",
+  "delete": "Delete",
+  "edit": "Edit"
 }

@@ -15,5 +15,6 @@
   "title": "Title",
   "desc": "Desc",
   "delete": "Delete",
-  "edit": "Edit"
+  "edit": "Edit",
+  "done": "Done!"
 }

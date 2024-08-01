@@ -137,7 +137,7 @@ class _TaskListItemState extends State<TaskListItem> {
                   },
                   child: widget.task.isDone
                       ? Text(
-                    'Done!',
+                    AppLocalizations.of(context)!.done,
                     style: TextStyle(
                       color: Colors.white, // Ensure "Done!" text is always visible
                       fontWeight: FontWeight.bold,

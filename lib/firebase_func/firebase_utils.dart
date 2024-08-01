@@ -22,4 +22,22 @@ class FirebaseUtils{
     return getTasksCollection().doc(task.id).delete() ;
   }
 
+  // Update task to set isDone to true
+  static Future<void> UpdateTask_isDone(Task task){
+    return getTasksCollection().doc(task.id).update({
+      'isDone': true,
+    }
+    ) ;
+  }
+
+  // Update task to set new title and desc and date time to change
+  static Future<void> UpdateTask(Task task){
+    return getTasksCollection().doc(task.id).update({
+      'title': task.title,
+      'desc':task.desc,
+      'dateTime':task.dateTime.millisecondsSinceEpoch,
+    }
+    );
+  }
+
 }

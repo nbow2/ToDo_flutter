@@ -11,6 +11,7 @@ import 'package:todo_demo/provider/config_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:todo_demo/provider/list_provider.dart';
 import 'firebase_options.dart';
+import 'home/list/edit_task_item.dart';
 
 
 
@@ -60,6 +61,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Homescreen.routeName,
       routes: {
         Homescreen.routeName: (context) => Homescreen(),
+        EditTaskItem.routeName: (context) => EditTaskItem(),
 
       },
     );

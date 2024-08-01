@@ -20,6 +20,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   String title = '';
   String desc = '';
   late ListProvider listProvider ;
+  late bool isDone;
 
   @override
   Widget build(BuildContext context) {
@@ -149,6 +150,47 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       );
     }
   }
+
+  void UpdateTask(){
+    if(formKEY.currentState?.validate() == true)
+    {
+      // add Task
+      Task task = Task(
+          title: title,
+          desc: desc,
+          dateTime: selectedDate
+      );
+      FirebaseUtils.UpdateTask(task).timeout(
+          Duration(seconds: 1),
+          onTimeout: (){
+            print('task added successfully');
+            listProvider.getAllTasksFromFireStore();
+            Navigator.pop(context);
+          }
+      );
+    }
+  }
+
+  // void IsDone() {
+  //
+  //   if(formKEY.currentState?.validate() == true)
+  //   {
+  //     // add Task
+  //     Task task = Task(
+  //         title: title,
+  //         desc: desc,
+  //         dateTime: selectedDate
+  //     );
+  //     FirebaseUtils.addTask(task).timeout(
+  //         Duration(seconds: 1),
+  //         onTimeout: (){
+  //           print('task added successfully');
+  //           listProvider.getAllTasksFromFireStore();
+  //           Navigator.pop(context);
+  //         }
+  //     );
+  //   }
+  // }
 
   void ShowCalender() async{
    var chosenDate = await showDatePicker(

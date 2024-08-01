@@ -30,7 +30,7 @@ class _HomescreenState extends State<Homescreen> {
         title: Text(AppLocalizations.of(context)!.app_title,
         style: Theme.of(context).textTheme.titleLarge,
         ),
-        elevation: 0,
+          elevation: 0,
       ),
       body: tabs[SelectedIndex],
       bottomNavigationBar: BottomAppBar(

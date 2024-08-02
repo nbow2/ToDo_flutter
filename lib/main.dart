@@ -3,6 +3,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:todo_demo/auth/login/login_screen.dart';
+import 'package:todo_demo/auth/register/screen_.dart';
 import 'package:todo_demo/home/homescreen.dart';
 import 'package:todo_demo/my_theme/my_theme_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -58,10 +60,12 @@ class MyApp extends StatelessWidget {
       locale: Locale(provider.appLanguage),
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      initialRoute: Homescreen.routeName,
+      initialRoute: LoginScreen.routeName,
       routes: {
         Homescreen.routeName: (context) => Homescreen(),
         EditTaskItem.routeName: (context) => EditTaskItem(),
+        Screen_Register.routeName:(context) => Screen_Register(),
+        LoginScreen.routeName: (context) => LoginScreen()
 
       },
     );
